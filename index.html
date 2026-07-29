@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varun Mathur — AI/ML Engineer</title>
+<meta name="description" content="Varun Mathur — AI/ML Computational Science Senior Analyst. Building enterprise AI platforms, RAG systems, and semantic search at scale.">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-alt:#0f141c;
+    --card:#141a24;
+    --border:#232b38;
+    --text:#e6ebf2;
+    --text-dim:#aab6c9;
+    --text-faint:#75839a;
+    --accent:#5eead4;
+    --accent-2:#818cf8;
+    --accent-dark:#2dd4bf;
+    --accent-soft:rgba(94,234,212,0.1);
+    --radius:14px;
+    --maxw:920px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(94,234,212,0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(129,140,248,0.06), transparent);
+    pointer-events:none;
+    z-index:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+  section{padding:88px 0;}
+  section:first-of-type{padding-top:0;}
+
+  /* Nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(12px);
+    background:rgba(10,14,20,0.75);
+    border-bottom:1px solid var(--border);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:18px;padding-bottom:18px;
+  }
+  .logo{font-weight:700;letter-spacing:-0.02em;font-size:17px;color:var(--text);}
+  .logo span{color:var(--accent);}
+  .navlinks{display:flex;gap:28px;align-items:center;}
+  .navlinks a{font-size:14px;color:var(--text-dim);transition:color .2s;}
+  .navlinks a:hover{color:var(--accent);}
+  .nav-cta{
+    background:#f97316;color:#2a1103;padding:9px 18px;border-radius:8px;
+    font-size:13px;font-weight:600;transition:background-color .15s, transform .15s, box-shadow .15s;
+  }
+  .nav-cta:hover{background-color:#ea660a;color:#2a1103;transform:translateY(-1px);box-shadow:0 6px 16px -6px rgba(249,115,22,0.55);}
+  .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;}
+
+  /* Hero */
+  .hero{
+    padding:110px 0 90px;
+    text-align:left;
+  }
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.03em;
+    background:var(--accent-soft);border:1px solid rgba(94,234,212,0.25);
+    padding:6px 14px;border-radius:999px;margin-bottom:24px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);}
+  h1{
+    font-size:clamp(36px,6vw,58px);
+    font-weight:800;letter-spacing:-0.03em;line-height:1.08;
+    margin-bottom:20px;
+  }
+  h1 .grad{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero-sub{
+    font-size:19px;color:var(--text-dim);max-width:640px;margin-bottom:38px;
+  }
+  .hero-sub strong{color:var(--text);font-weight:600;}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:48px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:14px 24px;border-radius:10px;font-weight:600;font-size:15px;
+    transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    border:1px solid transparent;
+  }
+  .btn svg{width:17px;height:17px;flex-shrink:0;}
+  .btn-primary{
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    color:#06131a;
+    box-shadow:0 8px 24px -8px rgba(94,234,212,0.45);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(94,234,212,0.55);}
+  .btn-outline{
+    background:transparent;border-color:var(--border);color:var(--text);
+  }
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+  .contact-row{display:flex;flex-wrap:wrap;gap:22px;}
+  .contact-item{
+    display:inline-flex;align-items:center;gap:9px;font-size:14.5px;color:var(--text-dim);
+    transition:color .2s;
+  }
+  .contact-item:hover{color:var(--accent);}
+  .contact-item svg{width:17px;height:17px;flex-shrink:0;color:var(--text-faint);transition:color .2s;}
+  .contact-item:hover svg{color:var(--accent);}
+
+  /* Section headers */
+  .eyebrow{
+    font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:10px;
+  }
+  h2{font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px;}
+  .section-lead{color:var(--text-dim);font-size:16px;max-width:620px;margin-bottom:48px;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start;}
+  .about-text p{color:var(--text-dim);font-size:16px;margin-bottom:16px;}
+  .about-text strong{color:var(--text);}
+  .stat-card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px;margin-bottom:14px;
+  }
+  .stat-num{font-size:28px;font-weight:800;color:var(--accent);letter-spacing:-0.02em;}
+  .stat-label{font-size:13.5px;color:var(--text-dim);margin-top:2px;}
+
+  /* Experience timeline */
+  .timeline{position:relative;}
+  .job{
+    position:relative;padding-left:32px;padding-bottom:44px;border-left:1px solid var(--border);
+  }
+  .job:last-child{padding-bottom:0;}
+  .job::before{
+    content:"";position:absolute;left:-6.5px;top:4px;width:12px;height:12px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--accent);
+  }
+  .job-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:4px;}
+  .job-title{font-size:18px;font-weight:700;color:var(--text);}
+  .job-meta{font-size:13.5px;color:var(--text-faint);white-space:nowrap;}
+  .job-org{font-size:14.5px;color:var(--accent);font-weight:600;margin-bottom:12px;}
+  .job ul{list-style:none;}
+  .job li{
+    position:relative;padding-left:20px;color:var(--text-dim);font-size:15px;margin-bottom:9px;
+  }
+  .job li::before{
+    content:"▸";position:absolute;left:0;color:var(--accent-2);font-size:13px;top:2px;
+  }
+  .company-tag{
+    display:inline-block;font-size:12px;font-weight:700;color:var(--text-faint);
+    letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;
+  }
+
+  /* Leadership callout */
+  .leader-card{
+    background:linear-gradient(135deg, rgba(94,234,212,0.06), rgba(129,140,248,0.04));
+    border:1px solid var(--border);border-radius:var(--radius);padding:32px;
+  }
+  .leader-card h3{font-size:19px;font-weight:700;margin-bottom:16px;}
+  .leader-card ul{list-style:none;display:grid;gap:12px;}
+  .leader-card li{position:relative;padding-left:22px;color:var(--text-dim);font-size:15px;}
+  .leader-card li::before{content:"★";position:absolute;left:0;color:var(--accent);font-size:12px;top:3px;}
+
+  /* Skills */
+  .skill-groups{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;}
+  .skill-card h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:14px;font-weight:700;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{
+    font-size:13px;color:var(--text-dim);background:var(--bg-alt);border:1px solid var(--border);
+    padding:6px 12px;border-radius:999px;transition:border-color .2s, color .2s;
+  }
+  .pill:hover{border-color:var(--accent);color:var(--text);}
+
+  /* Certifications */
+  .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .cert-card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:20px;display:flex;gap:14px;align-items:flex-start;
+  }
+  .cert-icon{
+    width:38px;height:38px;border-radius:9px;background:var(--accent-soft);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .cert-icon svg{width:19px;height:19px;color:var(--accent);}
+  .cert-card p{font-size:14.5px;color:var(--text);font-weight:600;line-height:1.4;}
+
+  /* Education */
+  .edu-card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;
+  }
+  .edu-card h3{font-size:18px;font-weight:700;margin-bottom:4px;}
+  .edu-card p{color:var(--text-dim);font-size:14.5px;}
+  .edu-right{text-align:right;}
+  .edu-cgpa{font-size:22px;font-weight:800;color:var(--accent);}
+  .edu-cgpa-label{font-size:12px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.05em;}
+
+  /* Contact CTA */
+  .cta-section{
+    background:linear-gradient(135deg, rgba(94,234,212,0.08), rgba(129,140,248,0.06));
+    border:1px solid var(--border);border-radius:24px;padding:64px 48px;text-align:center;
+  }
+  .cta-section h2{margin-bottom:14px;}
+  .cta-section .section-lead{margin:0 auto 36px;}
+  .cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-bottom:36px;}
+  .cta-socials{display:flex;justify-content:center;gap:20px;}
+  .social-btn{
+    width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    background:var(--card);border:1px solid var(--border);color:var(--text-dim);
+    transition:all .2s;
+  }
+  .social-btn:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-3px);}
+  .social-btn svg{width:19px;height:19px;}
+
+  footer{padding:36px 0;text-align:center;color:var(--text-faint);font-size:13.5px;border-top:1px solid var(--border);}
+  footer a{color:var(--text-dim);}
+  footer a:hover{color:var(--accent);}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media(max-width:760px){
+    .navlinks{display:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .skill-groups{grid-template-columns:1fr;}
+    .cert-grid{grid-template-columns:1fr;}
+    section{padding:60px 0;}
+    .hero{padding:64px 0 60px;}
+    .cta-section{padding:44px 22px;}
+    .edu-card{flex-direction:column;align-items:flex-start;}
+    .edu-right{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Varun<span>.</span>Mathur</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span> Open to new opportunities</div>
+    <h1>Building <span class="grad">enterprise AI systems</span><br>that ship, scale, and hold up in production.</h1>
+    <p class="hero-sub">
+      I'm <strong>Varun Mathur</strong>, an AI/ML Computational Science Senior Analyst at Accenture.
+      I design and ship LLM-powered platforms, retrieval-augmented systems, and semantic search at
+      enterprise scale — the kind of work that turns a proof of concept into something 19 engineers rely on.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="Varun-Mathur-Resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        Download Resume
+      </a>
+      <a class="btn btn-outline" href="mailto:varunmathur1990@gmail.com?subject=Let's%20talk%20about%20an%20opportunity">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M3 6l9 7 9-7M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+        Email Me
+      </a>
+    </div>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:varunmathur1990@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+        varunmathur1990@gmail.com
+      </a>
+      <a class="contact-item" href="tel:+919044789900">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 90447 89900
+      </a>
+      <a class="contact-item" href="https://www.linkedin.com/in/varunmathur2710/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.33V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
+      <a class="contact-item" href="https://github.com/DudeFr0mMars" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.78-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.06a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.34 2.75-1.06 2.75-1.06.55 1.43.2 2.49.1 2.75.64.73 1.03 1.65 1.03 2.78 0 3.98-2.34 4.86-4.57 5.11.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">About</div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Over the past three years at <strong>Accenture</strong>, I've moved from analyst to senior analyst
+        while owning AI systems end to end — architecture, implementation, and production reliability. My work
+        sits at the intersection of <strong>LLMs, retrieval systems, and distributed backend engineering</strong>.</p>
+        <p>Recent highlights: cutting response latency by <strong>40%</strong> and production defects by
+        <strong>57%</strong> on an enterprise AI platform, pushing semantic search precision from
+        <strong>30% to 87%</strong> across 167K+ documents, and reducing hallucinated responses by
+        <strong>78%</strong> through systematic evaluation and prompt engineering.</p>
+        <p>Before Accenture, I trained GANs at <strong>Samsung R&D</strong> to improve computer vision
+        robustness under real-world glare conditions. I hold a B.Tech in Electronics &amp; Communications
+        Engineering from VIT with a 9.03 CGPA, and I'm always glad to talk about what I'm building next.</p>
+      </div>
+      <div class="reveal">
+        <div class="stat-card"><div class="stat-num">40%</div><div class="stat-label">Latency reduction on enterprise AI platform</div></div>
+        <div class="stat-card"><div class="stat-num">87%</div><div class="stat-label">Search precision, up from 30%, across 167K+ docs</div></div>
+        <div class="stat-card"><div class="stat-num">19</div><div class="stat-label">Engineers mentored across 2 GenAI initiatives</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow reveal">Experience</div>
+    <h2 class="reveal">Where I've made an impact</h2>
+    <p class="section-lead reveal">A track record of taking generative AI from proof of concept to production, at enterprise scale.</p>
+
+    <div class="timeline">
+      <div class="job reveal">
+        <span class="company-tag">Accenture</span>
+        <div class="job-head">
+          <span class="job-title">AI/ML Computational Science Senior Analyst</span>
+          <span class="job-meta">Nov 2025 — Present</span>
+        </div>
+        <div class="job-org">Bangalore, India</div>
+        <ul>
+          <li>Architected and scaled an enterprise AI platform implementing conversational memory, intelligent suggestion services, query correction, and prompt orchestration — reducing response latency by 40% and production defects by 57%.</li>
+          <li>Designed and optimized a large-scale semantic search system indexing 167K+ enterprise documents using vector embeddings and NLP pipelines, improving search precision from 30% to 87%.</li>
+          <li>Developed and deployed a generative AI analytics service for automated earnings-report processing, cutting analysis turnaround time by 93% through scalable backend workflows and LLM-powered pipelines.</li>
+          <li>Built and delivered reusable AI-powered applications adopted across internal and client-facing products, improving knowledge discovery and operational efficiency.</li>
+          <li>Reengineered a production RAG platform using Azure Functions, Python, and Azure Blob Storage, improving system reliability by 35% and eliminating service downtime.</li>
+          <li>Collaborated across product, engineering, and business teams to deliver scalable AI capabilities from design through production deployment.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <span class="company-tag">Accenture</span>
+        <div class="job-head">
+          <span class="job-title">AI/ML Computational Science Analyst</span>
+          <span class="job-meta">Sept 2023 — Nov 2025</span>
+        </div>
+        <div class="job-org">Bangalore, India</div>
+        <ul>
+          <li>Migrated a production generative AI application to the Haystack framework, improving response accuracy from 66% to 92% while enhancing maintainability and deployment reliability.</li>
+          <li>Built backend services integrating LLMs, retrieval systems, and external tools through function-calling architectures to support production AI applications.</li>
+          <li>Reduced incorrect and hallucinated responses by 78% through systematic prompt optimization, retrieval improvements, evaluation frameworks, and tool integration.</li>
+          <li>Presented technical architecture and implementation strategy for generative AI solutions to senior leadership, driving investment and delivery of 5 production-grade AI assets.</li>
+        </ul>
+      </div>
+
+      <div class="job reveal">
+        <span class="company-tag">Internship · Samsung R&D</span>
+        <div class="job-head">
+          <span class="job-title">Computer Vision Engineer</span>
+          <span class="job-meta">May 2021 — Feb 2022</span>
+        </div>
+        <div class="job-org">Bangalore, India</div>
+        <ul>
+          <li>Trained GANs written with PyTorch to overlay realistic reflections on images, improving dataset robustness under glare conditions by 35%.</li>
+          <li>Applied GAN-generated synthetic reflections to augment computer vision datasets, enhancing the accuracy of glare removal by up to 21%.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap">
+    <div class="eyebrow reveal">Leadership</div>
+    <h2 class="reveal">AI Architect &amp; Team Leader</h2>
+    <div class="leader-card reveal">
+      <ul>
+        <li>Mentored cross-functional teams of up to 19 engineers across 2 enterprise Generative AI initiatives.</li>
+        <li>Launched 5 production AI assets, reducing dev cycle by 28% and improving cross-team delivery efficiency by 35%.</li>
+        <li>Re-architected validation and testing workflows, raising accuracy to 95% and reducing release time by 30%.</li>
+        <li>Spearheaded a generative AI proof of concept to senior leadership, securing investment for dedicated asset development — leading to 5 shipped assets.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow reveal">Skills</div>
+    <h2 class="reveal">Tools of the trade</h2>
+    <p class="section-lead reveal">The languages, frameworks, and infrastructure I use to take AI systems from idea to production.</p>
+    <div class="skill-groups">
+      <div class="skill-card reveal">
+        <h4>Languages</h4>
+        <div class="pill-row">
+          <span class="pill">Python</span><span class="pill">Java</span><span class="pill">SQL</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>AI/ML &amp; Frameworks</h4>
+        <div class="pill-row">
+          <span class="pill">LLMs</span><span class="pill">RAG</span><span class="pill">Semantic Search</span>
+          <span class="pill">NLP</span><span class="pill">Embeddings</span><span class="pill">Prompt Engineering</span>
+          <span class="pill">LangChain</span><span class="pill">Haystack</span><span class="pill">CrewAI</span>
+          <span class="pill">OpenAI SDK</span><span class="pill">Multi-Agent Systems</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Backend &amp; Cloud</h4>
+        <div class="pill-row">
+          <span class="pill">FastAPI</span><span class="pill">REST APIs</span><span class="pill">Microservices</span>
+          <span class="pill">Microsoft Azure</span><span class="pill">Azure Functions</span><span class="pill">Docker</span>
+          <span class="pill">CI/CD</span><span class="pill">Azure Blob Storage</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4>Databases &amp; Engineering</h4>
+        <div class="pill-row">
+          <span class="pill">PostgreSQL</span><span class="pill">SQL Server</span><span class="pill">Vector Databases</span>
+          <span class="pill">System Design</span><span class="pill">Distributed Systems</span><span class="pill">Scalability</span>
+          <span class="pill">Performance Optimization</span><span class="pill">Unit Testing</span><span class="pill">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="eyebrow reveal">Certifications</div>
+    <h2 class="reveal">Credentials</h2>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+        <p>Microsoft Certified: AI Transformation Leader (AB-731)</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+        <p>Claude Certified Architect — Foundations</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+        <p>Claude Certified Architect — Early Adopter</p>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7z"/></svg></div>
+        <p>Developing Solutions for Microsoft Azure</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow reveal">Education</div>
+    <h2 class="reveal">Academic background</h2>
+    <div class="edu-card reveal">
+      <div>
+        <h3>Vellore Institute of Technology</h3>
+        <p>Bachelor of Technology in Electronics &amp; Communications Engineering</p>
+        <p>Jul 2019 — Jul 2023</p>
+      </div>
+      <div class="edu-right">
+        <div class="edu-cgpa">9.03</div>
+        <div class="edu-cgpa-label">CGPA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta-section reveal">
+      <div class="eyebrow" style="justify-content:center;display:flex;">Contact</div>
+      <h2>Let's build something intelligent together</h2>
+      <p class="section-lead">
+        I'm actively exploring new opportunities in AI/ML engineering. If you're hiring, or just want to talk
+        shop about RAG systems and production LLM architecture, my inbox is open.
+      </p>
+      <div class="cta-btns">
+        <a class="btn btn-primary" href="mailto:varunmathur1990@gmail.com?subject=Let's%20talk%20about%20an%20opportunity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+          Email Varun
+        </a>
+        <a class="btn btn-outline" href="Varun-Mathur-Resume.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          Download Resume
+        </a>
+      </div>
+      <div class="cta-socials">
+        <a class="social-btn" href="mailto:varunmathur1990@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 7 9-7M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
+        </a>
+        <a class="social-btn" href="https://www.linkedin.com/in/varunmathur2710/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.33V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a class="social-btn" href="https://github.com/DudeFr0mMars" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.5 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.78-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.06a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.34 2.75-1.06 2.75-1.06.55 1.43.2 2.49.1 2.75.64.73 1.03 1.65 1.03 2.78 0 3.98-2.34 4.86-4.57 5.11.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .28.18.6.69.5A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        </a>
+        <a class="social-btn" href="tel:+919044789900" aria-label="Phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Varun Mathur. Built with intent, not a template.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
