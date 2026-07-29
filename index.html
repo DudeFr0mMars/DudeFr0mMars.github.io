@@ -61,12 +61,12 @@
   .navlinks{display:flex;gap:28px;align-items:center;}
   .navlinks a{font-size:14px;color:var(--text-dim);transition:color .2s;}
   .navlinks a:hover{color:var(--accent);}
-  .nav-cta{
-    background:#f97316;color:#2a1103;padding:9px 18px;border-radius:8px;
-    font-size:13px;font-weight:600;transition:background-color .15s, transform .15s, box-shadow .15s;
+  .navlinks a.nav-cta{
+    background:#f97316;color:#000000;padding:9px 18px;border-radius:8px;
+    font-size:13px;font-weight:600;box-shadow:0 8px 24px -8px rgba(249,115,22,0.5);
+    transition:background-color .15s ease, transform .15s ease, box-shadow .15s ease;
   }
-  .nav-cta:hover{background-color:#ea660a;color:#2a1103;transform:translateY(-1px);box-shadow:0 6px 16px -6px rgba(249,115,22,0.55);}
-  .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;}
+  .navlinks a.nav-cta:hover{background-color:#ea660a;color:#000000;transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(249,115,22,0.6);}
 
   /* Hero */
   .hero{
