@@ -202,6 +202,12 @@
   .cert-icon svg{width:19px;height:19px;color:var(--accent);}
   .cert-card p{font-size:14.5px;color:var(--text);font-weight:600;line-height:1.4;}
 
+  /* Project thumbnail */
+  .proj-thumb{
+    width:180px;height:110px;border-radius:12px;object-fit:cover;flex-shrink:0;
+    background:var(--bg-alt);border:1px solid var(--border);
+  }
+
   /* Education */
   .edu-card{
     background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;
@@ -437,6 +443,27 @@
           <span class="pill">Performance Optimization</span><span class="pill">Unit Testing</span><span class="pill">Git</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow reveal">Projects</div>
+    <h2 class="reveal">Selected Projects</h2>
+    <p class="section-lead reveal">Work I'm proud of — product thinking, engineering, and things you can try live.</p>
+
+    <div class="cert-grid">
+      <a class="cert-link reveal" href="https://apricot-website-murex.vercel.app/dashboard" target="_blank" rel="noopener noreferrer">
+        <div class="cert-card">
+          <img class="proj-thumb" src="https://media.licdn.com/dms/image/v2/D5622AQESiSAmZKKTgA/feedshare-shrink_480/B56ZyjxtaGI0As-/0/1772274243445?e=1787788800&v=beta&t=p2ybfDMegnNzIugQAnBkaCqLuZopxuLiCM9HAX-KFSQ" alt="Apricot screenshot">
+          <div>
+            <p style="font-weight:700;color:var(--text);margin-bottom:6px;">Apricot — Knowledge &amp; quiz platform</p>
+            <p style="color:var(--text-dim);font-size:14px;margin-top:6px;margin-bottom:6px;">Features: Quizzes across predetermined topics; custom topic quizzes generated on demand (the loading screens are games!); create personal quizzes; 1v1 battles with friends (2v2 planned); daily challenges; leaderboards, tiered rankings, and achievement badges; detailed player stats and progression tracking.</p>
+            <p style="color:var(--text-dim);font-size:13px;margin-top:8px;">Login as guest or sign up with email / Google OAuth.</p>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
