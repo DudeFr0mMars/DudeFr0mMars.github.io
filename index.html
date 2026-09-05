@@ -320,6 +320,53 @@
     .edu-card{flex-direction:column;align-items:flex-start;}
     .edu-right{text-align:left;}
   }
+
+  /* Black, gold, and graph paper accents */
+  :root{
+    --bg:#0b0b0a;--bg-alt:#121211;--card:#151514;--border:#34332e;
+    --text:#f4f0e7;--text-dim:#b9b5aa;--text-faint:#77736a;
+    --accent:#e1b84f;--accent-2:#f3d98a;--accent-dark:#b78924;
+    --accent-soft:rgba(225,184,79,.12);--radius:2px;--maxw:1040px;
+  }
+  body{background-color:var(--bg);font-family:Georgia,"Times New Roman",serif;line-height:1.65;}
+  body::before{background-image:linear-gradient(rgba(225,184,79,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(225,184,79,.035) 1px,transparent 1px);background-size:32px 32px;opacity:.35;}
+  nav{background:rgba(11,11,10,.92);border-bottom:1px solid var(--accent-dark);backdrop-filter:none;}
+  nav .wrap{padding-top:16px;padding-bottom:16px;}
+  .logo{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;letter-spacing:.04em;text-transform:uppercase;}
+  .logo span,.navlinks a:hover,.contact-item:hover,.contact-item:hover svg,footer a:hover{color:var(--accent);}
+  .navlinks{gap:24px;}.navlinks a{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;}
+  .navlinks a.nav-cta{background:var(--accent);color:#111;padding:9px 14px;border-radius:0;box-shadow:4px 4px 0 var(--accent-dark);}
+  .navlinks a.nav-cta:hover{background:var(--accent-2);color:#111;transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--accent-dark);}
+  .hero{padding:126px 0 108px;border-bottom:1px solid var(--border);}
+  .kicker,.eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:uppercase;letter-spacing:.14em;}
+  .kicker{color:var(--accent);background:none;border:0;border-left:2px solid var(--accent);padding:0 0 0 12px;border-radius:0;margin-bottom:28px;font-size:11px;}
+  .dot{width:6px;height:6px;border-radius:0;background:var(--accent);box-shadow:none;}
+  h1{font-size:clamp(38px,6vw,70px);line-height:1.02;letter-spacing:-.045em;max-width:940px;} h1 .grad{background:none;color:var(--accent);}
+  .hero-sub{font-size:18px;max-width:700px;color:var(--text-dim);}.hero-sub strong,h2,.job-title,.leader-card h3,.edu-card h3{font-family:ui-sans-serif,system-ui,sans-serif;}
+  .btn{border-radius:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding:13px 18px;}
+  .btn-primary{background:var(--accent);color:#111;box-shadow:4px 4px 0 var(--accent-dark);}.btn-primary:hover{background:var(--accent-2);box-shadow:5px 5px 0 var(--accent-dark);}
+  .btn-outline{border-color:var(--accent-dark);}.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+  .eyebrow{font-size:11px;color:var(--accent);margin-bottom:12px;} h2{font-size:clamp(27px,4vw,40px);letter-spacing:-.035em;}
+  section{padding:96px 0;border-bottom:1px solid var(--border);}.section-lead{font-size:16px;color:var(--text-dim);}
+  .stat-card,.skill-card,.cert-link .cert-card,.github-card,.edu-card{border-radius:0;background:var(--card);border:1px solid var(--border);}
+  .stat-card{padding:20px;margin-bottom:16px;}.stat-num,.job-org,.cert-card p,.github-link-label,.edu-cgpa{color:var(--accent);}.stat-label{color:var(--text-dim);}
+  .about-text p,.job li,.leader-card li{color:var(--text-dim);}.job{border-left:1px solid var(--accent-dark);}.job::before{border-radius:0;background:var(--bg);border-color:var(--accent);}
+  .job-meta,.company-tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--text-faint);}.job li::before{content:"/";color:var(--accent);}
+  .leader-card,.cta-section{background-color:#e1b84f;color:#14130f;border:0;border-radius:0;box-shadow:8px 8px 0 #000;}.leader-card{padding:34px;}
+  .leader-card h3,.leader-card li,.cta-section h2,.cta-section .section-lead{color:#14130f;}.leader-card li::before{content:"+";color:#14130f;}
+  .skill-card{padding:22px;background:#111110;}.skill-card h4{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);}
+  .pill,.github-pill{border-radius:0;background:var(--bg-alt);border-color:var(--border);color:var(--text-dim);}.pill:hover{border-color:var(--accent);color:var(--accent);}
+  .cert-link:hover .cert-card,.cert-link:hover .github-card{border-color:var(--accent);transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--accent-dark);}
+  .cert-icon{border-radius:0;background:var(--accent-soft);}.github-badge{border-radius:0;border-color:var(--accent-dark);background:var(--accent-soft);color:var(--accent);}.github-icon{border-radius:0;background:var(--bg);border-color:var(--border);}.github-card{background:#111110;}
+  .edu-card{padding:26px;background:#111110;}.cta-section{padding:68px 48px;}.cta-section .btn-outline{border-color:#14130f;color:#14130f;}.cta-section .btn-outline:hover{background:#14130f;color:var(--accent);}
+  .social-btn{border-radius:0;background:#14130f;border-color:#14130f;color:var(--accent);}.social-btn:hover{color:#fff;border-color:#fff;}
+  footer{border-top:0;border-bottom:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;letter-spacing:.04em;}
+  .pinned{position:relative;background-color:#f1e4ae!important;color:#16140e;box-shadow:5px 5px 0 rgba(0,0,0,.5);}
+  .pinned::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(45,70,90,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(45,70,90,.13) 1px,transparent 1px);background-size:18px 18px;pointer-events:none;}
+  .pinned::after{content:"";position:absolute;top:-9px;left:50%;width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff0b6 0 12%,var(--accent) 13% 48%,#8e6414 50% 100%);box-shadow:1px 2px 2px rgba(0,0,0,.45);transform:translateX(-50%);}
+  .pinned>*{position:relative;z-index:1;}.stat-card:nth-child(2){transform:rotate(1deg);}.stat-card:nth-child(3){transform:rotate(-1deg);}.stat-card.pinned:hover{transform:translateY(-3px) rotate(0);}
+  .pinned .stat-num,.pinned .stat-label,.pinned h3,.pinned li,.pinned p,.pinned .edu-cgpa,.pinned .edu-cgpa-label{color:#16140e;}
+  @media(max-width:760px){.hero{padding:82px 0 72px;}section{padding:72px 0;}.cta-section{padding:48px 22px;}}
 </style>
 </head>
 <body>
@@ -394,9 +441,9 @@
         Engineering from VIT with a 9.03 CGPA, and I'm always glad to talk about what I'm building next.</p>
       </div>
       <div class="reveal">
-        <div class="stat-card"><div class="stat-num">40%</div><div class="stat-label">Latency reduction on enterprise AI platform</div></div>
-        <div class="stat-card"><div class="stat-num">87%</div><div class="stat-label">Search precision, up from 30%, across 167K+ docs</div></div>
-        <div class="stat-card"><div class="stat-num">19</div><div class="stat-label">Engineers mentored across 2 GenAI initiatives</div></div>
+        <div class="stat-card pinned"><div class="stat-num">40%</div><div class="stat-label">Latency reduction on enterprise AI platform</div></div>
+        <div class="stat-card pinned"><div class="stat-num">87%</div><div class="stat-label">Search precision, up from 30%, across 167K+ docs</div></div>
+        <div class="stat-card pinned"><div class="stat-num">19</div><div class="stat-label">Engineers mentored across 2 GenAI initiatives</div></div>
       </div>
     </div>
   </div>
@@ -461,7 +508,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">Leadership</div>
     <h2 class="reveal">AI Architect &amp; Team Leader</h2>
-    <div class="leader-card reveal">
+    <div class="leader-card pinned reveal">
       <ul>
         <li>Mentored cross-functional teams of up to 19 engineers across 2 enterprise Generative AI initiatives.</li>
         <li>Launched 5 production AI assets, reducing dev cycle by 28% and improving cross-team delivery efficiency by 35%.</li>
@@ -632,7 +679,7 @@
   <div class="wrap">
     <div class="eyebrow reveal">Education</div>
     <h2 class="reveal">Academic background</h2>
-    <div class="edu-card reveal">
+    <div class="edu-card pinned reveal">
       <div>
         <h3>Vellore Institute of Technology</h3>
         <p>Bachelor of Technology in Electronics &amp; Communications Engineering</p>
@@ -648,7 +695,7 @@
 
 <section id="contact">
   <div class="wrap">
-    <div class="cta-section reveal">
+    <div class="cta-section pinned reveal">
       <div class="eyebrow" style="justify-content:center;display:flex;">Contact</div>
       <h2>Let's build something intelligent together</h2>
       <p class="section-lead">
